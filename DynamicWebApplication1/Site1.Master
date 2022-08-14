@@ -1,0 +1,143 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="DynamicWebApplication1.Site1" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <%--bootstrap css--%>
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <%--datatables css--%>
+    <link href="datatables/css/jquery.dataTables.min.css" rel="stylesheet" />
+    <%--fontawesome css--%>
+    <link href="fontawesome/css/all.css" rel="stylesheet" />
+    <%--mycustom css--%>
+    <link href="css/customstylesheet.css" rel="stylesheet" />
+
+    <%--jquery--%>
+    <script src="bootstrap/js/jquery-3.3.1.slim.min.js"></script>
+    <%--popper js--%>
+    <script src="bootstrap/js/popper.min.js"></script>
+    <%--bootstrap js--%>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <%--Datatables js--%>
+    <script src="datatables/js/jquery.dataTables.min.js"></script>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+ 
+        <div>
+
+            <nav class="navbar navbar-expand-lg navbar-dark">
+                <a class="navbar-brand" href="#">
+                    <img src="imgs/dimension-data-logo.png" width="30" height="30"/>
+                    Dimension Data Cafe
+                </a>
+                
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportContent" 
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <%--static webpages--%>
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="home.aspx">Home</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="about.aspx">About us</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="contactus.aspx">Contact us</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="help.aspx">Help</a>
+                        </li>
+                    </ul>
+
+                    <%--Dynamic webpages--%>
+                    <ul class="navbar-nav">
+                        <li class="nav-item active">
+                            <asp:LinkButton class="nav-link" ID="LinkButton5" runat="server" Visible="False">Hi user</asp:LinkButton>
+                        </li>
+                        
+                        <li class="nav-item active">
+                            <asp:LinkButton class="nav-link" ID="LinkButton2" runat="server" Visible="False" 
+                                OnClick="LinkButton2_Click">Your Profile</asp:LinkButton>
+                        </li>
+
+                        <li class="nav-item active">
+                            <asp:LinkButton class="nav-link" ID="LinkButton9" runat="server" 
+                                OnClick="LinkButton9_Click">Menu</asp:LinkButton>
+                        </li>
+
+                        <li class="nav-item active">
+                            <asp:LinkButton class="nav-link" ID="LinkButton4" runat="server" 
+                                OnClick="LinkButton4_Click">Log in</asp:LinkButton>
+                        </li>
+                        <li class="nav-item active">
+                            <asp:LinkButton class="nav-link" ID="LinkButton1" runat="server" Visible="False" OnClick="LinkButton1_Click">Logout</asp:LinkButton>
+                        </li>
+                        <li class="nav-item active">
+                            <asp:LinkButton class="nav-link" ID="LinkButton3" runat="server" OnClick="LinkButton3_Click">Cart</asp:LinkButton>
+                        </li>
+                        <li class="nav-item active">
+                            <asp:LinkButton class="nav-link" ID="LinkButton8" runat="server" Visible="False" OnClick="LinkButton8_Click">Reports</asp:LinkButton>
+                        </li>
+                        <li class="nav-item active">
+                            <asp:LinkButton class="nav-link" ID="LinkButton11" runat="server" Visible="False" OnClick="LinkButton11_Click">Manage Items</asp:LinkButton>
+                        </li>
+
+                    </ul>
+                </div>
+
+            </nav>
+        </div>
+        
+        <!-- Main Content Placeholder -->
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <!-- Main Content Placeholder -->
+
+
+        <br />
+        <footer>         
+            <div id="footer1" class="container-fluid">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+                        <ul/></ul>
+                        <p>
+                            <asp:LinkButton class="footerlinks" ID="LinkButton6" 
+                                runat="server" OnClick="LinkButton6_Click">About</asp:LinkButton>
+                            &nbsp;
+                            <asp:LinkButton class="footerlinks" ID="LinkButton7" 
+                                runat="server" OnClick="LinkButton7_Click">Contact Us</asp:LinkButton>
+                            &nbsp;   
+                            <asp:LinkButton class="footerlinks" ID="LinkButton10" 
+                                runat="server" OnClick="LinkButton10_Click">Help</asp:LinkButton>
+                            &nbsp;                                       
+                        </p>
+                    
+                    </div>
+                </div>
+            </div>
+
+            <div id="footer2" class="container-fluid">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+                       <p style="color:whitesmoke">All rights Reserved. Dimension Data (Codename:DND)</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+
+    </form>
+</body>
+</html>
